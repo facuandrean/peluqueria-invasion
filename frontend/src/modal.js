@@ -1,4 +1,4 @@
-import parseDate from "./date";
+import parseDate from "./date.js";
 import './styles/modal.css';
 
 const modalElement = `
