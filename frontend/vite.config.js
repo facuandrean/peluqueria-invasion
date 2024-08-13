@@ -16,4 +16,11 @@ export default defineConfig({
       minify: true,
     }),
   ],
+  resolve: {
+    alias: {
+      // Añade alias si necesitas simplificar rutas
+      '@': '/src',
+    },
+  },
 });
+
