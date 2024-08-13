@@ -1,0 +1,64 @@
+/* Component properties */
+
+.contenedorCalendario {
+  width: 80%;
+  height: 100vh;
+
+  padding: .5rem;
+
+  margin-left: 315px;
+}
+
+/* .fc-day-mon {
+} */
+
+/* .fc-day-sun {
+  cursor: not-allowed;
+  background-color: var(--gray-color);
+} */
+
+/* .fc-day-mon:hover,
+.fc-day-tue:hover,
+.fc-day-wed:hover,
+.fc-day-thu:hover,
+.fc-day-fri:hover,
+.fc-day-sat:hover,
+.fc-day-sun:hover {
+  cursor: pointer;
+} */
+
+/* .fc-allowed-selection {
+  cursor: default !important;
+}
+
+.fc-time-grid .fc-slats td, 
+.fc-day-grid .fc-day {
+  cursor: pointer !important;
+} */
+
+.fc-day-mon,
+.fc-day-tue,
+.fc-day-wed,
+.fc-day-thu,
+.fc-day-fri,
+.fc-day-sat,
+.fc-day-sun {
+  cursor: pointer;
+}
+
+.fc-scrollgrid-sync-inner a {
+  text-decoration: none;
+}
+
+.fc-col-header-cell-cushion,
+.fc-daygrid-day-number {
+  color: black;
+}
+
+/* Media queries CELULAR*/
+ 
+/*
+@media only screen and (max-width: 600px) {
+  /* estilos para pantallas menores o iguales a 600px 
+}
+*/
