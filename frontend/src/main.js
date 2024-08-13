@@ -1,4 +1,4 @@
-import checkAuthentication from "./components/auth.js";
+import checkAuthentication from "./auth.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     checkAuthentication();
