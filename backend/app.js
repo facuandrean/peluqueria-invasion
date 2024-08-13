@@ -26,6 +26,10 @@ app.use(cookieParser());
 // Iniciamos la base de datos.
 dbStart();
 
+app.get('/', (req, res) => {
+    res.send('<h1>Hoa mundo index</h1>')
+})
+
 // Endpoints.
 app.use(routesSession);
 
