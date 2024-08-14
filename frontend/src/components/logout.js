@@ -2,7 +2,7 @@ export const logout = async () => {
 
     try {
 
-        const response = await fetch('https://peluqueria-invasion.vercel.app/logout', {
+        const response = await fetch('https://peluqueria-invasion-back.vercel.app/logout', {
             method: 'POST',
             credentials: 'include'
         });
