@@ -16,9 +16,15 @@ const app = express();
 
 // Middlewares.
 app.use(express.json());
+// app.use(cors({
+//     origin: "https://peluqueria-invasion-front.vercel.app",
+//     credentials: true
+// }));
 app.use(cors({
-    origin: "http://localhost:5173",
-    credentials: true
+    origin: "https://peluqueria-invasion-front.vercel.app",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+    allowedHeaders: "Content-Type,Authorization"
 }));
 app.use(cookieParser());
 
