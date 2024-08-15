@@ -8,7 +8,9 @@ export default async function checkAuthentication() {
         const response = await fetch('https://peluqueria-invasion-back.vercel.app/verify-token', { credentials: 'include' });
 
         if (!response.ok || response.status === 401) {
-            window.location.href = '/login.html';
+            alert('la respuesta fue negativa')
+            console.log(response)
+            // window.location.href = '/login.html';
         } else {
 
             alert('la respuesta fue ok')
