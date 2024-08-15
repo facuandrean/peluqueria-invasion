@@ -10,6 +10,8 @@ export default async function checkAuthentication() {
         if (!response.ok || response.status === 401) {
             alert('la respuesta fue negativa')
             console.log(response)
+            const data = await response.json(); 
+            console.log(data)
             // window.location.href = '/login.html';
         } else {
 
