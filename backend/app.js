@@ -36,7 +36,7 @@ dbStart();
 // Endpoints.
 app.use(routesSession);
 
-app.get('/verify-token', verifyToken, (req, res) => {
+app.get('/verify-token', verifyToken, async (req, res) => {
     const user = req.user;
     res.send({ user });
 });
