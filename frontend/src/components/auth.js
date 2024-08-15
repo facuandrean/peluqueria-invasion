@@ -11,12 +11,16 @@ export default async function checkAuthentication() {
             window.location.href = '/login.html';
         } else {
 
+            alert('la respuesta fue ok')
+            
             // Leemos el cuerpo de la respuesta, en el cual recibimos el usuario logueado.
             const data = await response.json(); 
 
             if (data.user.Rol === "Empleado") {
+                alert('renderizaremos la vista del empleado')
                 await renderIndexEmployee(data);
             } else if (data.user.Rol === "Admin") {
+                alert('renderizaremos la vista del admin')
                 await renderIndexAdmin(data);
             }
             
