@@ -15,9 +15,9 @@ export default async function checkAuthentication() {
             const data = await response.json(); 
 
             if (data.user.Rol === "Empleado") {
-                renderIndexEmployee(data);
+                await renderIndexEmployee(data);
             } else if (data.user.Rol === "Admin") {
-                renderIndexAdmin(data);
+                await renderIndexAdmin(data);
             }
             
         } 
