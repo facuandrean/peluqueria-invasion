@@ -17,6 +17,8 @@ document.getElementById('login-form').addEventListener('submit', async (event) =
     });
     
     if (response.ok) {
+        // window.location.href = '/';
+        await new Promise(resolve => setTimeout(resolve, 5500)); // Espera 500ms (puedes ajustar este tiempo)
         window.location.href = '/';
     } 
     
