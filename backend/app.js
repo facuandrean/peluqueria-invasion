@@ -28,7 +28,7 @@ app.use(cors({
 }));
 app.use(cookieParser());
 
-app.options('*', cors());
+// app.options('*', cors());
 
 // Iniciamos la base de datos.
 dbStart();
@@ -36,7 +36,7 @@ dbStart();
 // Endpoints.
 app.use(routesSession);
 
-app.get('/verify-token', verifyToken, async (req, res) => {
+app.get('/verify-token', verifyToken, (req, res) => {
     const user = req.user;
     res.send({ user });
 });
