@@ -49,6 +49,7 @@ const login = async (req, res) => {
             domain: 'peluqueria-invasion-back.vercel.app', // Dominio del backend
             path: '/', // Asegúrate de que la cookie esté disponible para todas las rutas
             // No se establece maxAge ni expires para que sea una cookie de sesión
+            maxAge: 1000 * 60 * 60 * 10
         });
         
         // enviamos la información del usuario logueado y la información de los tokens
@@ -88,7 +89,6 @@ const register = async (req, res) => {
 const logout = (req, res) => {
     // Limpiamos el token de las cookies.
     res.clearCookie('access_token');
-    res.clearCookie('_vercel_jwt');
     res.json({ message: 'Logout Successful.'});
 };
 
