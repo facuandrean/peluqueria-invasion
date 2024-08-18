@@ -33,11 +33,22 @@ const login = async (req, res) => {
         );
 
         // Guardamos el token de acceso en una cookie.
+        /*
         res.cookie('access_token', token, {
             httpOnly: true, // Solo accesible por el servidor
             secure: true, // Asegúrate de que solo se envíe sobre HTTPS
             sameSite: 'None', // Asegúrate de que se envíe en solicitudes cruzadas
             path: '/', // Asegúrate de que la cookie esté disponible para todas las rutas
+        });
+        */
+
+        res.cookie('access_token', token, {
+            httpOnly: true, // Solo accesible por el servidor
+            secure: true, // Asegúrate de que solo se envíe sobre HTTPS
+            sameSite: 'Lax', // Asegúrate de que se envíe en solicitudes cruzadas
+            domain: 'peluqueria-invasion-back.vercel.app', // Dominio del backend
+            path: '/', // Asegúrate de que la cookie esté disponible para todas las rutas
+            // No se establece maxAge ni expires para que sea una cookie de sesión
         });
         
         // enviamos la información del usuario logueado y la información de los tokens
