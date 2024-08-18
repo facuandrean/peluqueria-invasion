@@ -37,7 +37,7 @@ const login = async (req, res) => {
             httpOnly: true, // Solo accesible por el servidor
             secure: true, // Asegúrate de que solo se envíe sobre HTTPS
             sameSite: 'None', // Asegúrate de que se envíe en solicitudes cruzadas
-            domain: 'https://peluqueria-invasion-front.vercel.app', // Dominio del backend
+            // domain: 'https://peluqueria-invasion-front.vercel.app', // Dominio del backend
             path: '/', // Asegúrate de que la cookie esté disponible para todas las rutas
             maxAge: 1000 * 60 * 60 * 10
         });
@@ -78,7 +78,14 @@ const register = async (req, res) => {
 
 const logout = (req, res) => {
     // Limpiamos el token de las cookies.
-    res.clearCookie('access_token');
+    // res.clearCookie('access_token');
+    res.clearCookie('token', {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'Lax',
+        path: '/',
+        // domain: 'tu-dominio.com' // Igual que antes, no lo incluyas si no es necesario
+    });
     res.json({ message: 'Logout Successful.'});
 };
 
