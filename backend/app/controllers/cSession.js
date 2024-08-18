@@ -37,7 +37,7 @@ const login = async (req, res) => {
             httpOnly: true, // Solo accesible por el servidor
             secure: true, // Asegúrate de que solo se envíe sobre HTTPS
             sameSite: 'None', // Asegúrate de que se envíe en solicitudes cruzadas
-            domain: '.vercel.app', // Dominio del backend
+            // domain: '.vercel.app', // Dominio del backend
             path: '/', // Asegúrate de que la cookie esté disponible para todas las rutas
             maxAge: 1000 * 60 * 60 * 10
         });
