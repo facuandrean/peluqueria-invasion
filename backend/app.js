@@ -20,15 +20,40 @@ app.use(express.json());
 //     origin: "https://peluqueria-invasion-front.vercel.app",
 //     credentials: true
 // }));
+/*
 app.use(cors({
     origin: "https://peluqueria-invasion-front.vercel.app",
     // methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     allowedHeaders: "Content-Type,Authorization"
 }));
+*/
 app.use(cookieParser());
 
-app.options('*', cors());
+// app.options('*', cors());
+
+const allowedOrigins = ['https://peluqueria-invasion-front.vercel.app', 
+                        'https://peluqueria-invasion-front-git-main-facundo-andreans-projects.vercel.app', 
+                        'https://peluqueria-invasion-front-rbsnpmbvv-facundo-andreans-projects.vercel.app',
+                       'http://localhost:5173'];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Verificar si el origen está en la lista de permitidos
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true, // Permitir el envío de cookies y credenciales
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Métodos HTTP permitidos
+  allowedHeaders: 'Content-Type,Authorization', // Encabezados permitidos
+  optionsSuccessStatus: 204 // Establecer el código de estado para OPTIONS preflight
+};
+
+// Usa CORS con las opciones configuradas
+app.use(cors(corsOptions));
 
 // Iniciamos la base de datos.
 dbStart();
