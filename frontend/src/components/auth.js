@@ -12,7 +12,7 @@ export default async function checkAuthentication() {
             console.log(response)
             const data = await response.json(); 
             console.log(data)
-            // window.location.href = '/login.html';
+            window.location.href = '/login';
         } else {
 
             alert('la respuesta fue ok')
@@ -31,7 +31,7 @@ export default async function checkAuthentication() {
         } 
 
     } catch (error) {
-        window.location.href = '/login.html';
+        window.location.href = '/login';
     };
 
 };
