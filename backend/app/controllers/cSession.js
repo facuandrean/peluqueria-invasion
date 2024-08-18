@@ -76,7 +76,7 @@ const register = async (req, res) => {
 
 const logout = (req, res) => {
     // Limpiamos el token de las cookies.
-    // res.clearCookie('access_token');
+    res.clearCookie('access_token');
     res.clearCookie('_vercel_jwt');
     res.json({ message: 'Logout Successful.'});
 };
