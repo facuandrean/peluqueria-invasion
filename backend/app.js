@@ -22,9 +22,9 @@ app.use(express.json());
 // }));
 app.use(cors({
     origin: "https://peluqueria-invasion-front.vercel.app",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    // methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
-    // allowedHeaders: "Content-Type,Authorization"
+    allowedHeaders: "Content-Type,Authorization"
 }));
 app.use(cookieParser());
 
@@ -36,7 +36,7 @@ dbStart();
 // Endpoints.
 app.use(routesSession);
 
-app.get('/verify-token', verifyToken, (req, res) => {
+app.get('https://peluqueria-invasion-front.vercel.app/verify-token', verifyToken, (req, res) => {
     const user = req.user;
     res.send({ user });
 });
@@ -47,7 +47,7 @@ app.use(routesUser);
 // Levantamos el puerto.
 app.listen(config.port, () => {
     console.log(`
-        Servidor iniciado en http://localhost:${config.port}
+        Servidor iniciado en https://peluqueria-invasion-front.vercel.app
     `);
 });
 
