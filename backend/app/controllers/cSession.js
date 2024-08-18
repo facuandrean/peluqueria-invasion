@@ -34,7 +34,7 @@ const login = async (req, res) => {
         res.cookie('access_token', token, {
             httpOnly: true, // Solo accesible por el servidor
             secure: true, // Asegúrate de que solo se envíe sobre HTTPS
-            sameSite: 'Lax', // Asegúrate de que se envíe en solicitudes cruzadas
+            sameSite: 'None', // Asegúrate de que se envíe en solicitudes cruzadas
             path: '/', // Asegúrate de que la cookie esté disponible para todas las rutas
         });
         
