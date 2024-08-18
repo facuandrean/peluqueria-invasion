@@ -16,25 +16,12 @@ const app = express();
 
 // Middlewares.
 app.use(express.json());
-// app.use(cors({
-//     origin: "https://peluqueria-invasion-front.vercel.app",
-//     credentials: true
-// }));
-/*
-app.use(cors({
-    origin: "https://peluqueria-invasion-front.vercel.app",
-    // methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
-    allowedHeaders: "Content-Type,Authorization"
-}));
-*/
 app.use(cookieParser());
 
-// app.options('*', cors());
-
+// Cors
 const allowedOrigins = ['https://peluqueria-invasion-front.vercel.app', 
                         'https://peluqueria-invasion-front-git-main-facundo-andreans-projects.vercel.app', 
-                        'https://peluqueria-invasion-front-rbsnpmbvv-facundo-andreans-projects.vercel.app',
+                        'https://peluqueria-invasion-back-4sao8te8g-facundo-andreans-projects.vercel.app',
                        'http://localhost:5173'];
 
 const corsOptions = {
@@ -70,9 +57,7 @@ app.use(routesUser);
 
 // Levantamos el puerto.
 app.listen(config.port, () => {
-    console.log(`
-        Servidor iniciado en https://peluqueria-invasion-front.vercel.app
-    `);
+    console.log('Servidor iniciado en https://peluqueria-invasion-back.vercel.app');
 });
 
 export default app;
