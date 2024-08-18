@@ -28,7 +28,7 @@ const login = async (req, res) => {
             }, 
             config.secretJwtKey, 
             {
-                expiresIn: '3m',
+                expiresIn: '10h',
             }
         );
 
@@ -39,7 +39,7 @@ const login = async (req, res) => {
             sameSite: 'None', // Asegúrate de que se envíe en solicitudes cruzadas
             // domain: 'https://peluqueria-invasion-front.vercel.app', // Dominio del backend
             path: '/', // Asegúrate de que la cookie esté disponible para todas las rutas
-            maxAge: 180000 
+            maxAge: 1000 * 60 * 60 * 10 
         });
         
         // enviamos la información del usuario logueado y la información de los tokens
