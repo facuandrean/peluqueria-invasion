@@ -17,6 +17,7 @@ document.getElementById('login-form').addEventListener('submit', async (event) =
     });
     
     if (response.ok) {
+        history.replaceState(null, '', '/');
         window.location.href = '/';
     } 
     
