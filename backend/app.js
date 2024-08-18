@@ -24,11 +24,11 @@ app.use(cors({
     origin: "https://peluqueria-invasion-front.vercel.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
-    allowedHeaders: "Content-Type,Authorization"
+    // allowedHeaders: "Content-Type,Authorization"
 }));
 app.use(cookieParser());
 
-// app.options('*', cors());
+app.options('*', cors());
 
 // Iniciamos la base de datos.
 dbStart();
