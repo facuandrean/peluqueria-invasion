@@ -49,7 +49,6 @@ const corsOptions = {
   credentials: true, // Permitir el envío de cookies y credenciales
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Métodos HTTP permitidos
   allowedHeaders: 'Content-Type,Authorization', // Encabezados permitidos
-  optionsSuccessStatus: 204 // Establecer el código de estado para OPTIONS preflight
 };
 
 // Usa CORS con las opciones configuradas
@@ -61,7 +60,7 @@ dbStart();
 // Endpoints.
 app.use(routesSession);
 
-app.get('https://peluqueria-invasion-front.vercel.app/verify-token', verifyToken, (req, res) => {
+app.get('/verify-token', verifyToken, (req, res) => {
     const user = req.user;
     res.send({ user });
 });
