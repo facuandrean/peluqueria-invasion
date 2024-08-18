@@ -79,9 +79,9 @@ const register = async (req, res) => {
 const logout = (req, res) => {
     // Limpiamos el token de las cookies.
     // res.clearCookie('access_token');
-    res.clearCookie('token', {
+    res.clearCookie('access_token', {
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
+        secure: true,
         sameSite: 'Lax',
         path: '/',
         // domain: 'tu-dominio.com' // Igual que antes, no lo incluyas si no es necesario
